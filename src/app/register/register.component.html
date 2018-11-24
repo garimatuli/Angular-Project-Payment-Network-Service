@@ -1,0 +1,38 @@
+<div>
+  <h2>Register</h2>
+  <form (ngSubmit)="register()">
+    <div>
+      <label>
+        First Name
+      </label>
+      <input type="text" name="name" [(ngModel)]="userInfoLocal.first_name"/>
+    </div>
+    <div>
+      <label>
+        Last Name
+      </label>
+      <input type="text" name="email" [(ngModel)]="userInfoLocal.last_name"/>
+    </div>
+    <!--div>
+      <label>
+        Phone
+      </label>
+      <input type="text"  name="phone" [(ngModel)]="userInfoLocal.phone"/>
+    </div>
+    <div>
+      <label>
+        SSN
+      </label>
+      <input type="text" name="ssn" [(ngModel)]="userInfoLocal.ssn"/>
+    </div>
+    <div>
+      <label>
+        Password
+      </label>
+      <input type="text"  name="password" [(ngModel)]="userInfoLocal.password"/>
+    </div-->
+    <div>
+      <button>Register</button>
+    </div>
+  </form>
+</div>
