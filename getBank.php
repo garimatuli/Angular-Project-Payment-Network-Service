@@ -35,7 +35,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET')
 	{
 		global $conn;
 		$ssn = mysqli_real_escape_string($conn, $_REQUEST['ssn']);
-		$query="SELECT ssn FROM has_additional where ssn='$ssn'" ;
+		$query="SELECT ssn FROM user_account where ssn='$ssn'" ;
 		$result= mysqli_query($conn, $query);
 		$data = mysqli_fetch_array($result, MYSQLI_NUM);
 		
