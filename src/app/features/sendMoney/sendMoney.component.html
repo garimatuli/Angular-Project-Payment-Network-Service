@@ -1,0 +1,82 @@
+<div class="div-header">
+  Send Money
+</div>
+
+<div>
+  <form #sendMoneyForm="ngForm" (ngSubmit)="submit()">
+
+          <div class="row">
+            <div class="col-md-12 text-center">
+            <label>TIJN Balance : ${{TIJNBalance}}</label>
+
+            </div>
+          </div>
+
+    <div class="row">
+      <div class="col-md-7">
+
+        <div class="form-group tijn-form-element row">
+          <div class="col-md-3 text-right">
+            <label for="EmailPhone" class="">Email/Phone<span class="red">*</span></label>
+          </div>
+          <div class="col-md-7">
+            <input type="text"
+                   class="form-control"
+                   id="EmailPhone"
+                   name="EmailPhone"
+                   aria-describedby="EmailPhoneHelp"
+                   placeholder="Enter Email/Phone of the Receiver"
+                   [(ngModel)]="sendMoney.identifier"
+                   required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7">
+
+        <div class="form-group tijn-form-element row">
+          <div class="col-md-3 text-right">
+            <label for="amount" class="">Amount<span class="red">*</span></label>
+          </div>
+          <div class="col-md-7">
+            <input type="text"
+                   class="form-control"
+                   id="amount"
+                   name="amount"
+                   aria-describedby="amountHelp"
+                   placeholder="Enter Amount to be sent"
+                   [(ngModel)]="sendMoney.amount"
+                   required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7">
+
+        <div class="form-group tijn-form-element row">
+          <div class="col-md-3 text-right">
+            <label for="memo" class="">Memo<span class="red">*</span></label>
+          </div>
+          <div class="col-md-7">
+             <textarea class="form-control" rows="3" id="memo" name="memo"
+                       placeholder="Enter memo/comments for the transaction"
+                       [(ngModel)]="sendMoney.memo" required>
+             </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group pull-left">
+      <button type="submit" class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn"
+              [disabled]="(sendMoneyForm.invalid || sendMoneyForm.pending)">
+        <span>Submit</span>
+      </button>
+    </div>
+
+  </form>
+</div>

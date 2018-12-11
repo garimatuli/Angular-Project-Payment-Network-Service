@@ -20,8 +20,6 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.z.saveUserInfo(this.userInfoLocal).subscribe((result) => {
-      // console.log(localStorage.getItem("userList"));
-      console.log('Response from backend'+result);
       this.x.navigate(['/login']);
     })
   }

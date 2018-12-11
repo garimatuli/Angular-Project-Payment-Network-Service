@@ -1,3 +1,14 @@
+TIJN is a payment network, that enables individuals to electronically transfer/receive money to/from others.
+
+Steps to locally Run the UI Code.
+
+1) Download code from Github in your workspace.
+2) Run the following commands at the Project Path from command prompt
+   a) npm install -g @angular/cli
+   b) npm install
+   c) ng serve
+3) Go to the browser and open http://localhost:4200
+
 # TIJNUI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.

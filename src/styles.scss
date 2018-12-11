@@ -1,1 +1,393 @@
 /* You can add global styles to this file, and also import other style files */
+
+a { cursor: pointer; }
+.help-block { font-size: 12px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #efefef;
+  min-height: 100vh;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-sizeX: 0.875em;
+  line-heightX: 1.42857;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.div-header{
+  color: #5b5b5b;
+  font-size: 1.7rem;
+  font-weight: 300;
+  padding-top: 20px;
+  padding-left: 0;
+  border-bottom: solid 1px #427c99;
+  margin-bottom: 26px;
+  margin-top: 6px;
+}
+
+.login {
+  margin-top: 30px;
+}
+
+.tijn-link {
+  //background-color: #427c99;
+  color: #427c99;
+}
+
+a:hover {
+  color: #eee;
+}
+
+input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+////////////////   Table CSS   ////////////////
+
+.table {
+  background-color: #fbfbfb;
+  border-top: solid 1px #ccc;
+  border-bottom: 0 !important;
+  margin-bottom: 46px;
+}
+
+.table {
+  margin-bottom: 6px;
+}
+
+table tr th {
+  color: #222;
+}
+
+table.dataTable thead th,
+table.dataTable thead td
+{
+  border-top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+table.dataTable tbody td
+{
+  border-top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.tijn_table_wrap {
+  overflow-y: auto;
+}
+
+th[sortable-column] {
+  text-align: left;
+  cursor: pointer;
+}
+
+
+.tijn .table,
+.table.tijn
+{
+  background-color: #fff;
+  /*background-color: #f2f2f2;*/
+  /*background-color: #fafafa;*/
+  border-top: solid 1px #aeaeae;
+  border-bottom: solid 1px #ccc !important;
+  width: 50%;
+  padding-top: 10px;
+  /*margin-bottom: 46px;*/
+}
+
+.tijn .table > thead > tr > th,
+.table.tijn > thead > tr > th
+{
+  background-color: #eeeeee;
+  border-top: solid 1px #aeaeae;
+  border-bottom: 1px solid #a6a6a6;
+  border-right: 1px solid #fff;
+  width: 25%;
+}
+
+.tijn .table > tbody > tr > td,
+.table.tijn > tbody > tr > td
+{
+  border-bottom: 1px solid #bebebe;
+  border-right: 1px solid #fff;
+}
+
+.tijn .table.table-striped > tbody > tr:nth-of-type(2n+1),
+.table.tijn.table-striped > tbody > tr:nth-of-type(2n+1)
+{
+  background-color: #fbfbfb;
+  /*background-color: #ededed;*/
+}
+
+.tijn .table.table-striped > tbody > tr:nth-of-type(2n+2),
+.table.tijn.table-striped > tbody > tr:nth-of-type(2n+2)
+{
+  background-color: #f2f2f2;
+  /*background-color: #fafafa;*/
+}
+
+table.tijn tr
+{
+  transition: all .5s;
+}
+
+table.tijn tr td .tijn-more
+{
+  color: #337ab7;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+table.tijn th:hover {
+  background-color: #f3f3f3;
+  /*background-color: rgba(0, 140, 203, 0.2);*/
+  transition: all .5s;
+}
+
+
+.table-action-wrap .table-action
+{
+  padding: 0 10px;
+  /*margin: 0 6px;*/
+  border-right: solid 1px #ccc;
+  display: inline-block;
+  color: #337ab7;
+}
+
+.table-action-wrap .table-action:last-child
+{
+  border-right: none;
+  padding-right: 0;
+}
+
+.table-action-wrap .table-action:first-child
+{
+  padding-left: 0;
+}
+
+
+/*
+////////////////////////    Form    /////////////////////
+*/
+
+.form-header {
+  color: #595959;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 2px;
+  border-bottom: solid 1px #4f9abe;
+  //border-bottom: solid 1px #427c99;
+}
+
+label
+{
+  font-weight: 600;
+}
+
+select.custom-select
+{
+  border-radius: 0;
+  border-color: #919191;
+}
+
+button.btn,
+button.btn.btn-default,
+input.btn.btn-default
+{
+
+  margin-right: 10px;
+  padding: 9px 19px;
+  border-radius: 1px;
+  outline: 0;
+  color: #222;
+  background-color: #dedede;
+  border: none;
+}
+
+
+.tijn-form-element button.tijn-dropdown-btn,
+.tijn-form-element input.form-control,
+.tijn-form-element textarea.form-control,
+.tijn-form-element select.form-control,
+.tijn-form-element input.form-control.bootstrap-datepicker,
+.tijn-form-element span.input-group-addon,
+.row.form-row input.bootstrap-datepicker,
+.row.form-row span.input-group-addon,
+
+div.tijn-form-element button.tijn-dropdown-btn,
+div.tijn-form-element input.form-control,
+div.tijn-form-element textarea.form-control,
+div.tijn-form-element select.form-control,
+div.tijn-form-element input.form-control.bootstrap-datepicker,
+div.tijn-form-element span.input-group-addon,
+div.row.form-row input.bootstrap-datepicker,
+div.row.form-row span.input-group-addon,
+input#requestedFor
+{
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.tijn-form-element input.form-control {
+  background-color: #fff;
+}
+
+
+.form-group.tijn-form-element label,
+.tijn-form-element .form-group label
+{
+  padding: 0;
+}
+
+input.bootstrap-datepickerX,
+div.tijn-form-element input.form-control.bootstrap-datepicker
+{
+  width: 100px !important;
+}
+
+.tijn-form-element button.tijn-dropdown-btn,
+.tijn-form-element input.bootstrap-datepicker,
+.tijn-form-element .form-control,
+.tijn-form-element input.form-control.bootstrap-datepicker,
+.tijn-form-element span.input-group-addon,
+
+div.tijn-form-element button.tijn-dropdown-btn,
+div.tijn-form-element input.bootstrap-datepicker,
+div.tijn-form-element .form-control,
+div.tijn-form-element input.form-control.bootstrap-datepicker,
+div.tijn-form-element span.input-group-addon
+{
+  border-color: #919191;
+}
+
+.tijn-form-element .form-control,
+div.tijn-form-element .form-control
+{
+  width: 100% !important;
+}
+
+.tijn-form-element .form-control.width-auto,
+div.tijn-form-element .form-control.width-auto
+{
+  width: auto !important;
+}
+
+
+div.row.form-row input.bootstrap-datepicker,
+div.tijn-form-element input.form-control.bootstrap-datepicker
+{
+  background-color: #fff;
+}
+
+div.btn.tijn-form-btn {
+  border-top: solid 1px #427c99;
+  margin: 20px 0 30px;
+  padding: 30px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+button.btn.tijn-form-btn,
+button.btn.tijn-form-btn.tijn-form-btn-icon,
+button.btn.tijn-form-btn.btn-default,
+input.btn.tijn-form-btn.btn-default,
+input.btn.tijn-form-btn-inline.tijn-form-btn.btn-default
+{
+  margin-right: 6px;
+  padding: 9px 19px;
+  border-radius: 1px;
+  outline: 0;
+  color: #222;
+  background-color: #dedede;
+  border: none;
+}
+
+button.btn.tijn-form-btn.tijn-form-btn-icon
+{
+  background-color: #fff;
+  padding: 6px 12px;
+  border: solid 1px #919191;
+  font-size: 16px;
+}
+
+button.btn.tijn-form-btn.tijn-form-btn-icon.tijn-form-btn-inline
+{
+  margin-top: 24px;
+}
+
+input.btn.tijn-form-btn-inline.tijn-form-btn.btn-default,
+input.btn.tijn-form-btn-inline.btn-default
+{
+  padding: 7px 19px 8px 19px;
+  margin-top: 28px;
+  cursor: pointer;
+}
+
+button.btn.tijn-form-btn#btn_submit,
+button.btn.tijn-form-btn.main-btn,
+input.btn.tijn-form-btn.main-btn,
+input.btn.tijn-form-btn.btn-default.main-btn
+{
+  background-color: #427c99;
+  color: #fff;
+}
+
+.form-group.required label:after {
+  content:"*";
+  display: block;
+  position: absolute;
+  right: -.6em;
+  top: 0;
+  color: red;
+}
+
+.tijn-form-element select.form-control,
+div.tijn-form-element select.form-control
+{
+  height: calc(2.16rem + 2px) !important;
+  //height: calc(2.25rem + 2px);
+}
+
+.tijn-form-element .red
+{
+  color: red;
+}
+
+.red{
+  color: red;
+}
+
+
+
+
+
+
+

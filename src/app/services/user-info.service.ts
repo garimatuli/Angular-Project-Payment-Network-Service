@@ -1,28 +1,57 @@
 import { Injectable } from '@angular/core';
-import {UserInfo} from "../models/user-info.model";
-import {Observable, of} from 'rxjs';
-import {HttpResponse} from "@angular/common/http";
-
-import { HttpClient } from "@angular/common/http";
+import { UserInfo } from "../models/user-info.model";
+import { Observable, of } from 'rxjs';
+import { HttpHeaders, HttpClient } from "@angular/common/http";
 
 
-//let users: any[] = [] || JSON.parse(localStorage.getItem('userList'));
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json;',
+    //  'Content-Type':  'application/x-www-form-urlencoded; charset=UTF-8'
+     'Cache-Control': 'no-cache',
+     'Access-Control-Allow-Origin': '*',
+     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+     'Access-Control-Max-Age': '1728000'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserInfoService {
+
+  loggedInSsn  : number;
+  loggedInIdentifier: string;
 
   constructor(private http: HttpClient) { }
 
   saveUserInfo(newUser:UserInfo) {
-  /*users.push(newUser);
-  // console.log('List of Users' + users);
-  localStorage.setItem('userList',JSON.stringify(users));
-   //  console.log('In Service'+localStorage.getItem("userList"));*/
-  //return of(new HttpResponse({status: 200}));
+    return <Observable<UserInfo>>this.http.post("http://localhost/dbms/register", newUser, httpOptions);
+  }
 
-    return <Observable<UserInfo>> this.http.post("http://localhost:80/dbms", newUser);
-}
+  loginService(loginUser:UserInfo){
+    return <Observable<UserInfo>> this.http.get("http://localhost/dbms/login?identifier="
+      +loginUser.identifier+"&password="+loginUser.password);
+  }
 
+  setSSN(ssn)
+  {
+    this.loggedInSsn = ssn;
+  }
+
+  getSSN(){
+  return this.loggedInSsn;
+  }
+
+  // For using in Send/Request Transaction Table
+
+  setIdentifier(identifierFromLogin)
+  {
+    this.loggedInIdentifier = identifierFromLogin;
+  }
+
+  getIdentifier(){
+    return this.loggedInIdentifier;
+  }
 }

@@ -1,0 +1,122 @@
+<div class="div-header">
+  Add/Remove Bank
+</div>
+
+<div class="row justify-content-between">
+  <div class="col-md-9 text-right">
+    <input
+      class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn"
+      type="button"
+      (click)="openAddNewBank()"
+      value="Add Bank">
+  </div>
+</div>
+
+<div style="padding-top: 5px;">
+  <table class="table table-striped tijn" style="width: 75%">
+    <thead>
+    <tr>
+      <th>Bank ID</th>
+      <th>Bank Account Number</th>
+      <th>Primary Account(Y/N)</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let x of profileBank">
+      <td>{{x.BankID}}</td>
+      <td>{{x.BANumber}}</td>
+      <td>{{x.IsPrimary}}</td>
+      <td>
+        <div class="table-action-wrap">
+          <div class="table-action">
+            <span style="cursor:pointer" (click)="deleteBank(x)">Delete</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- New System Modal -->
+<dialog-box>
+  <div class="tijnTitle">Add Bank</div>
+
+  <div class="tijnBody">
+    <div class="">
+
+      <!-- Bank Box and its input box -->
+      <div>
+        <form #addBankForm="ngForm" (ngSubmit)="submit()">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group tijn-form-element row">
+                <div class="col-md-2 text-right">
+                  <label for="BankID" class="">Bank ID<span class="red">*</span></label>
+                </div>
+                <div class="col-md-4">
+                  <input type="text"
+                         class="form-control"
+                         id="BankID"
+                         name="BankID"
+                         aria-describedby="BankIDHelp"
+                         [(ngModel)]="addedBank.BankID"
+                         required>
+                </div>
+
+                <div class="col-md-4 text-right">
+                  <label for="IsPrimary" class="">Primary Account(Y/N)<span class="red">*</span></label>
+                </div>
+                <div class="col-md-1">
+                  <input type="text"
+                         class="form-control"
+                         id="IsPrimary"
+                         name="IsPrimary"
+                         aria-describedby="IsPrimaryHelp"
+                         [(ngModel)]="addedBank.IsPrimary"
+                         maxlength="1"
+                         required>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group tijn-form-element row">
+                <div class="col-md-2 text-right">
+                  <label for="BANumber" class="">Bank Account Number<span class="red">*</span></label>
+                </div>
+                <div class="col-md-4">
+                  <input type="text"
+                         class="form-control"
+                         id="BANumber"
+                         name="BANumber"
+                         aria-describedby="BANumberHelp"
+                         [(ngModel)]="addedBank.BANumber"
+                         maxlength="10"
+                         required>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group float-right">
+            <button type="submit" class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn"
+                    [disabled]="(addBankForm.invalid || addBankForm.pending)">
+              <span>Submit</span>
+            </button>
+          </div>
+
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</dialog-box>

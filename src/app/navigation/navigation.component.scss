@@ -1,0 +1,41 @@
+// Navigation Bar CSS
+
+.page-header {
+  margin-top: 30px;
+  height: 50px;
+  margin-bottom: 30px;
+  //  border-bottom: 1px solid #ddd;
+  > .app-name {
+    float: left;
+    display: inline;
+    //margin-top: 11px;
+    margin-left: 36px;
+    font-size: 2rem;
+    color: #427c99;
+    //font-size: 1.8rem;
+  }
+  > a.logout {
+    margin-top: 8px;
+    padding: 6px 16px;
+    background-color: #427c99;
+    color: #fff;
+    //border-color: #9a3d37;
+    box-shadow: none;
+    border-radius: 2px;
+  }
+
+}
+
+.user-name {
+  float: right;
+  display: inline;
+  margin-top: 14px;
+  margin-right: 36px;
+  font-size: 1em;
+}
+
+.nav-link {
+  padding-right: 2.5rem !important;
+  padding-left: 2.5rem !important;
+}
+

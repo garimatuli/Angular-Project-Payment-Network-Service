@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-header nav-inline">
+      <a class="navbar-brand float-left app-name">TJIN</a>
+      <a id="logoutId" [routerLink]="['/login']" class="btn btn-primary active float-right logout">Logout</a>
+      <span class="user-name">{{loggedUser}}</span>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['']">Home</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/profileName']">Modify Personal Detail</a>
+          <a class="dropdown-item" [routerLink]="['/profileEmail']">Add/Remove Email Address</a>
+          <a class="dropdown-item" [routerLink]="['/profilePhone']">Add/Remove Phone Number</a>
+          <a class="dropdown-item" [routerLink]="['/profileBank']">Add/Remove Bank Account</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/sendMoney']">Send Money</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/requestMoney']">Request Money</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/statement']">Statement</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/searchTransaction']">Search Transaction</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>

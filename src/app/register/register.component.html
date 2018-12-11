@@ -1,38 +1,33 @@
-<div>
+<div class="col-md-4 col-md-offset-3 login">
   <h2>Register</h2>
-  <form (ngSubmit)="register()">
-    <div>
-      <label>
-        First Name
-      </label>
-      <input type="text" name="name" [(ngModel)]="userInfoLocal.first_name"/>
+  <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="name">Name<span class="red">*</span></label>
+      <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !name.valid }"
+             id="name" name="name" [(ngModel)]="userInfoLocal.name" placeholder="Name" #name="ngModel" required />
+      <div *ngIf="f.submitted && !name.valid" class="help-block invalid-feedback">Name is required</div>
     </div>
-    <div>
-      <label>
-        Last Name
-      </label>
-      <input type="text" name="email" [(ngModel)]="userInfoLocal.last_name"/>
+    <div class="form-group">
+      <label for="identifier">Email/Phone<span class="red">*</span></label>
+      <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !identifier.valid }"
+             id="identifier" name="identifier" [(ngModel)]="userInfoLocal.identifier" placeholder="Email Or Phone" #identifier="ngModel" required />
+      <div *ngIf="f.submitted && !identifier.valid" class="help-block invalid-feedback">Email or Phone is required</div>
     </div>
-    <!--div>
-      <label>
-        Phone
-      </label>
-      <input type="text"  name="phone" [(ngModel)]="userInfoLocal.phone"/>
+    <div class="form-group">
+      <label for="ssn">SSN<span class="red">*</span></label>
+      <input type="text" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !ssn.valid }" maxlength="10"
+             id="ssn" name="ssn" [(ngModel)]="userInfoLocal.ssn" placeholder="SSN" #ssn="ngModel" required />
+      <div *ngIf="f.submitted && !ssn.valid" class="help-block invalid-feedback">SSN is required</div>
     </div>
-    <div>
-      <label>
-        SSN
-      </label>
-      <input type="text" name="ssn" [(ngModel)]="userInfoLocal.ssn"/>
+    <div class="form-group">
+      <label for="password">Password<span class="red">*</span></label>
+      <input type="password" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && !password.valid }"
+             id="password" name="password" [(ngModel)]="userInfoLocal.password" placeholder="Password" #password="ngModel" required />
+      <div *ngIf="f.submitted && !password.valid" class="help-block invalid-feedback">Password is required</div>
     </div>
-    <div>
-      <label>
-        Password
-      </label>
-      <input type="text"  name="password" [(ngModel)]="userInfoLocal.password"/>
-    </div-->
-    <div>
-      <button>Register</button>
+    <div class="form-group">
+      <button  class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn">Register</button>
+      <a [routerLink]="['/login']" class="tijn-link">Cancel</a>
     </div>
   </form>
 </div>

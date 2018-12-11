@@ -1,0 +1,82 @@
+<div class="div-header">
+  View Transaction Statement
+</div>
+
+<div>
+  <form #statementForm="ngForm">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="form-group tijn-form-element row">
+          <div class="col-md-2 text-right">
+            <label for="startDate" class="">Start Date<span class="red">*</span></label>
+          </div>
+          <div class="col-md-4">
+            <input type="text" id="startDate" name="startDate" class="form-control" placeholder="Enter Start Date" bsDatepicker
+                   [bsConfig]="{dateInputFormat: 'YYYY/MM/DD', containerClass: 'theme-blue'}"
+                   [(ngModel)]="statement.startDate" required/>
+          </div>
+
+          <div class="col-md-2 text-right">
+            <label for="endDate" class="">End Date<span class="red">*</span></label>
+          </div>
+          <div class="col-md-4">
+            <input type="text" id="endDate" name="endDate" class="form-control" placeholder="Enter End Date" bsDatepicker
+                   [bsConfig]="{dateInputFormat: 'YYYY/MM/DD', containerClass: 'theme-blue'}"
+                   [(ngModel)]="statement.endDate" required/>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="form-group tijn-form-element row"></div>
+      </div>
+
+      <div class="col-md-12">
+      <hr>
+        <div class="row">
+
+          <div class="col-md-12 text-right">
+              <button class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn"
+              [disabled]="(statementForm.invalid || statementForm.pending)" (click)="reset()">
+              <span>Reset</span>
+              </button>
+
+               <button class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn"
+                [disabled]="(statementForm.invalid || statementForm.pending)" (click)="search()">
+                <span>Search</span>
+               </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12">
+        <div class="form-group tijn-form-element row"></div>
+      </div>
+
+
+    </div>
+
+  </form>
+</div>
+
+    <div class="row">
+      <div class="col-md-12 text-left">
+        <label>Total amount sent in the selected period : ${{sentAmount}}</label>
+      </div>
+    </div>
+
+<div class="form-group tijn-form-element row">
+
+</div>
+
+
+    <div class="row">
+      <div class="col-md-12 text-left">
+        <label>Total amount received in the selected period : ${{receivedAmount}}</label>
+      </div>
+    </div>
+

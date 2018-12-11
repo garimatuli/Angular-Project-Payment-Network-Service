@@ -1,0 +1,84 @@
+<div class="div-header">
+  Add/Remove Phone
+</div>
+
+<div class="row justify-content-between">
+  <div class="col-md-6 text-right">
+    <input
+      class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn"
+      type="button"
+      (click)="openAddNewPhone()"
+      value="Add Phone">
+  </div>
+</div>
+
+<div style="padding-top: 5px;">
+  <table class="table table-striped tijn">
+    <thead>
+    <tr>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let y of profilePhone">
+      <td>{{y.identifier}}</td>
+      <td>
+        <div class="table-action-wrap">
+          <div class="table-action">
+            <span style="cursor:pointer" (click)="deletePhone(y)">Delete</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- New System Modal -->
+<dialog-box>
+  <div class="tijnTitle">Add Phone</div>
+  <div class="tijnBody">
+    <div class="">
+
+      <!-- Phone Box and its input box -->
+      <div>
+        <form #addPhoneForm="ngForm" (ngSubmit)="submit()">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group tijn-form-element row">
+                <div class="col-md-2 text-right">
+                  <label for="phone" class="">Phone<span class="red">*</span></label>
+                </div>
+                <div class="col-md-10">
+                  <input type="text"
+                         class="form-control"
+                         id="phone"
+                         name="phone"
+                         aria-describedby="nameHelp"
+                         placeholder="Enter Phone"
+                         [(ngModel)]="addedPhone.identifier"
+                         maxlength="10"
+                         required>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group float-right">
+            <button type="submit" class="tijn-form-btn tijn-form-btn-inline btn btn-default main-btn"
+                    [disabled]="(addPhoneForm.invalid || addPhoneForm.pending)">
+              <span>Submit</span>
+            </button>
+          </div>
+
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</dialog-box>

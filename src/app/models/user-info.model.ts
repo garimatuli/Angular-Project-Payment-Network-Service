@@ -1,16 +1,12 @@
-/*export class UserInfo {
+export class UserInfo {
   name: string;
-  email: string;
-  phone: string;
+  identifier: string;
   ssn: number;
   password: string;
-}*/
-
-
-export class UserInfo {
-  first_name: string;
-  last_name: string;
 }
+
+
+
 
 
 // export class UserInfo {
